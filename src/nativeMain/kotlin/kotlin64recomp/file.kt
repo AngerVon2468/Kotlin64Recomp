@@ -1,4 +1,4 @@
-@file:Suppress("FunctionName")
+@file:Suppress("FunctionName", "unused")
 @file:OptIn(ExperimentalForeignApi::class)
 
 package kotlin64recomp
@@ -78,9 +78,3 @@ fun file_appendBytes(file: File, bytes: ByteArray) = file.appendBytes(bytes)
 fun file_writeText(file: File, text: String) = file.writeText(text)
 
 fun file_separator(): Char = filePathSeparator
-
-fun byteArrayOf(cArray: CPointer<ByteVar>, size: Int): ByteArray {
-	val dest = ByteArray(size)
-	for (i in 0..size) dest[i] = cArray[i]
-	return dest
-}
